@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:background="@color/black"
+        >
+        <!-- Logo -->
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_garage"/>
+
+        <TextView
+            android:id="@+id/display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="\uf7a4"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+
+            android:layout_gravity="end|center"
+            android:fontFamily="@font/fa_solid900"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

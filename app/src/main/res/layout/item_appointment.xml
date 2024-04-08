@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:weightSum="5"
+    android:id="@+id/cryptoRecyclerView"
+    android:background="@drawable/border_background"
+
+    >
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight="2"
+        android:padding="8dp"
+        android:id="@+id/displayInfo"
+        >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/appointmentDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DATE"
+                android:fontFamily="@font/noto_sans_font_family"
+                android:textFontWeight="800"
+                android:textSize="18sp"
+                android:textColor="@color/orange"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/appointmentTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:fontFamily="@font/noto_sans_font_family"
+                android:textColor="@color/orange"
+                android:text="Heure" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:padding="8dp"
+        >
+        <TextView
+            android:id="@+id/appointmentReason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_font_family"
+            android:textFontWeight="600"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="Motif"/>
+
+        <TextView
+            android:id="@+id/appointmentCar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_font_family"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="Véhicule"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/seeMore"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="\uf06e"
+        android:fontFamily="@font/fa_regular400"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/orange"
+
+        />
+
+</LinearLayout>
