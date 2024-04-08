@@ -19,7 +19,7 @@
         <ImageView
             android:layout_width="140dp"
             android:layout_height="100dp"
-            android:src="@drawable/logo_garage"/>
+            android:src="@drawable/logo_mon_garage"/>
 
         <TextView
             android:id="@+id/display"
@@ -29,14 +29,12 @@
             android:text="\uf7a4"
             android:textSize="36sp"
             android:textColor="@color/white"
-
             android:layout_gravity="end|center"
             android:fontFamily="@font/fa_solid900"
             android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_below="@id/header"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
