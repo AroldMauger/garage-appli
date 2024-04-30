@@ -1,7 +1,8 @@
-package com.garagetrempu.android
+package com.garagetrempu.android.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.garagetrempu.android.R
 import kotlinx.android.synthetic.main.activity_main.loginButton
 import kotlinx.android.synthetic.main.activity_main.password
 import kotlinx.android.synthetic.main.activity_main.user
