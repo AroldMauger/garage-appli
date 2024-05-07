@@ -1,4 +1,5 @@
 package com.garagetrempu.android.response
 
-class LoginResponse {
-}
+data class LoginResponse (
+    val token:String
+)

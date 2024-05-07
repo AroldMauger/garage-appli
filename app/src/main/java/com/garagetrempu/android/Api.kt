@@ -2,6 +2,7 @@ package com.garagetrempu.android
 
 import android.util.Log
 import com.garagetrempu.android.request.LoginRequest
+import com.garagetrempu.android.response.GetAppointmentsResponse
 import com.garagetrempu.android.response.LoginResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,6 +14,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import java.util.concurrent.TimeUnit
 
@@ -43,6 +46,11 @@ interface Api {
     fun login (
         @Body params: LoginRequest
     ) :Call<LoginResponse>
+
+    @GET("api/appointments")
+    fun getAppointments (
+        @Header ("Authorization") authorization: String = "${AppManager.token}"
+    ) :Call<List <GetAppointmentsResponse>>
 }
 
 fun <T> callback(success: ((Response<T>) -> Unit)?, failure: ((t: Throwable) -> Unit)? = null): Callback<T> {
