@@ -6,10 +6,11 @@ import com.garagetrempu.android.R
 import org.koin.android.ext.android.inject
 
 class DashboardActivity : AppCompatActivity() {
-    val viewModel by inject<DashboardViewModel> ()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
-        viewModel.getAppointments {  }
     }
+
+
 }
