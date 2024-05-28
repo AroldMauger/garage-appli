@@ -8,6 +8,7 @@ import com.garagetrempu.android.service
 
 class DashboardViewModel : ViewModel(){
     val appointments = mutableListOf<GetAppointmentsResponse>()
+    var selectedAppointment : GetAppointmentsResponse? = null
     fun getAppointments(callback: (()->Unit)) {
         service.getAppointments()
             .enqueue(com.garagetrempu.android.callback<List<GetAppointmentsResponse>>(

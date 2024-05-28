@@ -9,6 +9,16 @@
         android:id="@+id/appointment_list"
         android:name="com.garagetrempu.android.dashboard.appointmentlist.AppointmentListFragment"
         tools:layout="@layout/fragment_appointmentlist">
+        <action
+            android:id="@+id/from_list_to_details"
+            app:destination="@id/appointment_details">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/appointment_details"
+        android:name="com.garagetrempu.android.dashboard.appointmentsdetails.AppointmentDetailsFragment"
+        tools:layout="@layout/fragment_appointment_details">
 
     </fragment>
 

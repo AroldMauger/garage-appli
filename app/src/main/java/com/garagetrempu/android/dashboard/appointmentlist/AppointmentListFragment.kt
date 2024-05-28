@@ -5,15 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.garagetrempu.android.R
 import com.garagetrempu.android.dashboard.DashboardViewModel
+import com.garagetrempu.android.extension.navigateSafe
+import com.garagetrempu.android.response.GetAppointmentsResponse
 import kotlinx.android.synthetic.main.fragment_appointmentlist.list
 import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
-class AppointmentListFragment : Fragment() {
+class AppointmentListFragment : Fragment(), AppointmentAdapter.Listener{
 
-    val viewModel by inject<DashboardViewModel> ()
+    val viewModel by sharedViewModel<DashboardViewModel> ()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,9 +29,14 @@ class AppointmentListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getAppointments {
-            list.adapter = AppointmentAdapter(viewModel.appointments)
+            list.adapter = AppointmentAdapter(viewModel.appointments, this)
             list.layoutManager = LinearLayoutManager(context)
         }
 
+    }
+
+    override fun onItemSelected(appointment: GetAppointmentsResponse) {
+        viewModel.selectedAppointment = appointment
+        findNavController().navigateSafe(R.id.from_list_to_details)
     }
 }
