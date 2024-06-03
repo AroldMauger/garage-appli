@@ -3,6 +3,7 @@ package com.garagetrempu.android
 import android.util.Log
 import com.garagetrempu.android.request.LoginRequest
 import com.garagetrempu.android.response.GetAppointmentsResponse
+import com.garagetrempu.android.response.GetAppointmentsResponseWrapper
 import com.garagetrempu.android.response.LoginResponse
 import com.garagetrempu.android.response.NewAppointmentDTO
 import okhttp3.OkHttpClient
@@ -77,7 +78,22 @@ interface Api {
         @Header("Authorization") authorization: String,
         @Path("id") id: Int
     ): Call<Void>
+
+    @POST("api/appointments/new_appointment")
+    fun newAppointment(
+        @Header ("Authorization") authorization: String = "${AppManager.token}",
+        @Body newAppointment: NewAppointmentDTO
+    ): Call<Void>
+
+    @GET("api/appointments/history")
+    fun history(
+        @Header ("Authorization") authorization: String = "${AppManager.token}"
+    ) :Call<GetAppointmentsResponseWrapper>
+
 }
+
+
+
 
 fun <T> callback(success: ((Response<T>) -> Unit)?, failure: ((t: Throwable) -> Unit)? = null): Callback<T> {
     return object : Callback<T> {

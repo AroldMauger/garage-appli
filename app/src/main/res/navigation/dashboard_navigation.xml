@@ -58,6 +58,10 @@
         <action
             android:id="@+id/from_history_to_navbar"
             app:destination="@id/navbarhistory" />
+        <action
+            android:id="@+id/from_history_to_details"
+            app:destination="@id/history_appointment_details">
+        </action>
     </fragment>
 
     <fragment
@@ -75,6 +79,10 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/history_appointment_details"
+        android:name="com.garagetrempu.android.history.appointmentdetails.HistoryAppointmentDetailsFragment">
 
+    </fragment>
 
 </navigation>
