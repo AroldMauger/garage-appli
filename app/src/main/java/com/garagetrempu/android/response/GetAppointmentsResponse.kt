@@ -6,6 +6,8 @@ data class GetAppointmentsResponse(
     val customer: String,
     val phone : String,
     val car: String,
-    val reason : String
+    val reason : String,
+    //CODE AJOUTÉ
+    val status : String
 )
 

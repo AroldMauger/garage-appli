@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/black">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_mon_garage"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/back_to_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="\uf7a4"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/fa_solid900"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="6"
+        android:layout_marginTop="50dp">
+
+        <Button
+            android:id="@+id/newAppointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nouveau RDV"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:layout_marginTop="40dp"/>
+
+        <Button
+            android:id="@+id/historyAppointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historique RDV"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:layout_marginTop="60dp"/>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Déconnexion"
+            android:textSize="26sp"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:layout_marginTop="60dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

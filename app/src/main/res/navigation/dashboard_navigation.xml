@@ -12,14 +12,30 @@
         <action
             android:id="@+id/from_list_to_details"
             app:destination="@id/appointment_details">
-
         </action>
+        <action
+            android:id="@+id/from_list_to_navbar"
+            app:destination="@id/navbar" />
     </fragment>
     <fragment
         android:id="@+id/appointment_details"
         android:name="com.garagetrempu.android.dashboard.appointmentsdetails.AppointmentDetailsFragment"
         tools:layout="@layout/fragment_appointment_details">
+        <action
+            android:id="@+id/action_closeModal_to_appointment_list"
+            app:destination="@id/appointment_list" />
+        <action
+            android:id="@+id/action_to_dashboard"
+            app:destination="@id/appointment_list" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/navbar"
+        android:name="com.garagetrempu.android.dashboard.navbar.NavBar"
+        tools:layout="@layout/fragment_navbar" >
+        <action
+            android:id="@+id/from_navbar_to_list"
+            app:destination="@id/appointment_list" />
     </fragment>
 
 </navigation>

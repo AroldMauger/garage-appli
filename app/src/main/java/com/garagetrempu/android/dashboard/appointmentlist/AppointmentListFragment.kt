@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,11 +33,16 @@ class AppointmentListFragment : Fragment(), AppointmentAdapter.Listener{
             list.adapter = AppointmentAdapter(viewModel.appointments, this)
             list.layoutManager = LinearLayoutManager(context)
         }
-
+        val displayTextView: TextView = view.findViewById(R.id.display)
+        displayTextView.setOnClickListener {
+            findNavController().navigate(R.id.from_list_to_navbar)
+        }
     }
 
     override fun onItemSelected(appointment: GetAppointmentsResponse) {
         viewModel.selectedAppointment = appointment
         findNavController().navigateSafe(R.id.from_list_to_details)
     }
+
+
 }
