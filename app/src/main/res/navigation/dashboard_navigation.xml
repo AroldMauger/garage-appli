@@ -31,11 +31,50 @@
 
     <fragment
         android:id="@+id/navbar"
-        android:name="com.garagetrempu.android.dashboard.navbar.NavBar"
+        android:name="com.garagetrempu.android.dashboard.navbar.NavBarFragment"
         tools:layout="@layout/fragment_navbar" >
         <action
             android:id="@+id/from_navbar_to_list"
             app:destination="@id/appointment_list" />
+        <action
+            android:id="@+id/from_navbar_to_add_appointment"
+            app:destination="@id/add_appointment" />
+        <action
+            android:id="@+id/from_navbar_to_history"
+            app:destination="@id/history" />
     </fragment>
+
+    <fragment
+        android:id="@+id/add_appointment"
+        android:name="com.garagetrempu.android.add_appointment.AddAppointmentFragment">
+        <action
+            android:id="@+id/from_form_to_list"
+            app:destination="@id/appointment_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/history"
+        android:name="com.garagetrempu.android.history.HistoryFragment">
+        <action
+            android:id="@+id/from_history_to_navbar"
+            app:destination="@id/navbarhistory" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navbarhistory"
+        android:name="com.garagetrempu.android.dashboard.navbar.NavBarHistoryFragment">
+        <action
+            android:id="@+id/from_navbarhistory_to_history"
+            app:destination="@id/history" />
+        <action
+            android:id="@+id/from_navbarhistory_to_add_appointment"
+            app:destination="@id/add_appointment" />
+        <action
+            android:id="@+id/from_navbarhistory_to_list"
+            app:destination="@id/appointment_list" />
+
+    </fragment>
+
+
 
 </navigation>

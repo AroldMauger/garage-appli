@@ -33,8 +33,8 @@ class AppointmentListFragment : Fragment(), AppointmentAdapter.Listener{
             list.adapter = AppointmentAdapter(viewModel.appointments, this)
             list.layoutManager = LinearLayoutManager(context)
         }
-        val displayTextView: TextView = view.findViewById(R.id.display)
-        displayTextView.setOnClickListener {
+        val navbarButton: TextView = view.findViewById(R.id.display)
+        navbarButton.setOnClickListener {
             findNavController().navigate(R.id.from_list_to_navbar)
         }
     }

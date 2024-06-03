@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.garagetrempu.android.R
 import kotlinx.android.synthetic.main.fragment_navbar.back_to_list
 
-class NavBar : Fragment() {
+class NavBarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,6 +25,17 @@ class NavBar : Fragment() {
         // Configurer la navigation pour le bouton back_to_list
         back_to_list.setOnClickListener {
             findNavController().navigate(R.id.from_navbar_to_list)
+        }
+        val newAppointmentButton = view.findViewById<Button>(R.id.newAppointment)
+        newAppointmentButton.setOnClickListener {
+            // Naviguer vers le fragment add_appointment
+            findNavController().navigate(R.id.from_navbar_to_add_appointment)
+        }
+
+        val historyAppointmentButton = view.findViewById<Button>(R.id.historyAppointment)
+        historyAppointmentButton.setOnClickListener {
+            // Naviguer vers le fragment history
+            findNavController().navigate(R.id.from_navbar_to_history)
         }
     }
 }

@@ -5,9 +5,7 @@
     android:orientation="horizontal"
     android:padding="12dp"
     android:weightSum="5"
-    android:id="@+id/cryptoRecyclerView"
     android:background="@drawable/border_background"
-
     >
 
     <LinearLayout

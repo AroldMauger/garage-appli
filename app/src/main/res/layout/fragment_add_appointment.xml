@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="@color/black">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_mon_garage"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <!-- Bouton retour à l'accueil -->
+        <Button
+            android:id="@+id/returntomain_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tableau de bord"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/noto_sans_font_family"
+            android:textFontWeight="800" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+        <!-- Titre de la page d'inscription -->
+        <TextView
+            android:id="@+id/signup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AJOUTER UN RENDEZ-VOUS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_below="@id/returntomain_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/noto_sans_font_family"
+            android:textColor="@color/orange" />
+
+        <!-- Formulaire d'inscription -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/signup_title"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Prénom -->
+
+                <!-- Date -->
+                <EditText
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Date du RDV"
+                    android:inputType="date"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+                <!-- Heure -->
+                <EditText
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Heure du RDV"
+                    android:inputType="time"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+                <!-- Client -->
+                <EditText
+                    android:id="@+id/customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="Client"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <!-- Téléphone -->
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Téléphone"
+                    android:inputType="phone"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <!-- Véhicule -->
+                <EditText
+                    android:id="@+id/car"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Véhicule"
+                    android:inputType="text"
+                    android:minEms="2"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <!-- Motif -->
+                <EditText
+                    android:id="@+id/reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Motif du RDV"
+                    android:inputType="text"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    android:padding="5dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+
+                <!-- Bouton de soumission -->
+                <Button
+                    android:id="@+id/submit_signup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ajouter"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/noto_sans_font_family"
+                    style="@style/CustomButtonStyleDarkGrey"
+                    />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>
