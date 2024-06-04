@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_appointment_details.phone_modal
 import kotlinx.android.synthetic.main.fragment_appointment_details.reason_modal
 import kotlinx.android.synthetic.main.fragment_appointment_details.time_modal
 import org.koin.android.viewmodel.ext.android.sharedViewModel
+import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
@@ -108,15 +109,25 @@ class AppointmentDetailsFragment : Fragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun onAppointmentModified(appointmentId: Int) {
-
         // Log pour vérifier la chaîne de caractères obtenue
-
         try {
             // Utilisez le bon format pour analyser la date sans le décalage de fuseau horaire
-
             // Si la conversion est réussie, créer un objet NewAppointmentDTO avec la date analysée
+            val realDate = date_modal
+                .text
+                .toString()
+                .split("/")
+                .reversed()
+                .joinToString("-")
+
+            val realTime = "00:00:00"
+            // TODO : pour la gestion de l'heure : soit LocalDateTime soit en dur mais formaté
+            //  Transformation de l'heure en h:i:s ( heures:minutes:secondes )
+            val date = LocalDate.parse(realDate)
+            // TODO : gestion de l'heure ${date.hour}:${date.minute}:${date.second}
+            // mettre en dur les secondes à 00
             val newAppointment = NewAppointmentDTO(
-                date_modal.toString(),
+                "$realDate $realTime",
                 customer_modal.text.toString(),
                 phone_modal.text.toString(),
                 car_modal.text.toString(),
