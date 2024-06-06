@@ -120,12 +120,13 @@ class AppointmentDetailsFragment : Fragment() {
                 .reversed()
                 .joinToString("-")
 
-            val realTime = "00:00:00"
-            // TODO : pour la gestion de l'heure : soit LocalDateTime soit en dur mais formaté
-            //  Transformation de l'heure en h:i:s ( heures:minutes:secondes )
-            val date = LocalDate.parse(realDate)
-            // TODO : gestion de l'heure ${date.hour}:${date.minute}:${date.second}
-            // mettre en dur les secondes à 00
+            // Récupérer l'heure et les minutes de time_modal
+            val timeParts = time_modal.text.toString().split("h")
+            val hours = timeParts[0].padStart(2, '0')
+            val minutes = timeParts[1].padStart(2, '0')
+            val realTime = "$hours:$minutes:00"  // mettre en dur les secondes à 00
+
+            // Créer l'objet LocalDateTime en combinant la date et l'heure
             val newAppointment = NewAppointmentDTO(
                 "$realDate $realTime",
                 customer_modal.text.toString(),
