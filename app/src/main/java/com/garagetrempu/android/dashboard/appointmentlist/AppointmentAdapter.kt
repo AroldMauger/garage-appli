@@ -26,7 +26,7 @@ class AppointmentAdapter (val items:List<GetAppointmentsResponse>, val listener:
         fun bind(appointment: GetAppointmentsResponse, listener: Listener){
             val date = LocalDateTime.parse(appointment.date, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX"))
             val formattedDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-            val formattedTime = date.format(DateTimeFormatter.ofPattern("HH'h'mm"))
+            val formattedTime = date.format(DateTimeFormatter.ofPattern("HH':'mm"))
             itemView.appointmentDate.text = formattedDate
             itemView.appointmentTime.text = formattedTime
             itemView.appointmentCar.text = appointment.car

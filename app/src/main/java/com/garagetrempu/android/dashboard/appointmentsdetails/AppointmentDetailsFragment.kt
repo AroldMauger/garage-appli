@@ -51,7 +51,7 @@ class AppointmentDetailsFragment : Fragment() {
         // Parse and format the date before displaying it
         val date = OffsetDateTime.parse(appointment.date, DateTimeFormatter.ISO_OFFSET_DATE_TIME)
         val formattedDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-        val formattedTime = date.format(DateTimeFormatter.ofPattern("HH'h'mm"))
+        val formattedTime = date.format(DateTimeFormatter.ofPattern("HH':'mm"))
         // Set the formatted date in the modals
         date_modal.setText(formattedDate)
         time_modal.setText(formattedTime)
@@ -119,7 +119,7 @@ class AppointmentDetailsFragment : Fragment() {
                 .joinToString("-")
 
             // Récupérer l'heure et les minutes de time_modal
-            val timeParts = time_modal.text.toString().split("h")
+            val timeParts = time_modal.text.toString().split(":")
             val hours = timeParts[0].padStart(2, '0')
             val minutes = timeParts[1].padStart(2, '0')
             val realTime = "$hours:$minutes:00"  // mettre en dur les secondes à 00

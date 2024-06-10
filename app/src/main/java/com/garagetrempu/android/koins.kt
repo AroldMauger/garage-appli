@@ -1,5 +1,6 @@
 package com.garagetrempu.android
 
+import com.garagetrempu.android.add_appointment.AddAppointmentViewModel
 import com.garagetrempu.android.history.HistoryViewModel
 import com.garagetrempu.android.dashboard.DashboardViewModel
 import com.garagetrempu.android.login.LoginViewModel
@@ -10,7 +11,8 @@ import org.koin.dsl.module.module
 fun allModules() = listOf<Module>(
     loginActivityModule(),
     dashboardActivityModule(),
-    historyActivityModule()
+    historyActivityModule(),
+    addAppointmentActivityModule()
 )
 
 fun loginActivityModule() = module {
@@ -23,4 +25,8 @@ fun dashboardActivityModule() = module{
 
 fun historyActivityModule() = module{
     viewModel { HistoryViewModel() }
+}
+
+fun addAppointmentActivityModule() = module{
+    viewModel { AddAppointmentViewModel() }
 }
