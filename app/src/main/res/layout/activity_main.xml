@@ -7,9 +7,9 @@
 
     <!-- Logo -->
     <ImageView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:src="@drawable/logo_mon_garage"/>
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/logo_garage"/>
 
     <!-- Formulaire de connexion -->
     <LinearLayout
