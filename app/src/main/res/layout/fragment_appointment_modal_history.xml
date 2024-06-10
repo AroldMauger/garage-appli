@@ -37,7 +37,7 @@
         android:padding="20dp"
         android:id="@+id/appointment_info"
         >
-        <TextView
+        <EditText
             android:id="@+id/date_modal_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,8 +45,9 @@
             android:layout_marginBottom="8dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:enabled="false"
             />
-        <TextView
+        <EditText
             android:id="@+id/time_modal_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -54,8 +55,9 @@
             android:layout_marginBottom="8dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:enabled="false"
             />
-        <TextView
+        <EditText
             android:id="@+id/reason_modal_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -63,8 +65,9 @@
             android:layout_marginBottom="8dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:enabled="false"
             />
-        <TextView
+        <EditText
             android:id="@+id/car_modal_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -72,8 +75,9 @@
             android:layout_marginBottom="8dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:enabled="false"
             />
-        <TextView
+        <EditText
             android:id="@+id/customer_modal_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -81,9 +85,10 @@
             android:layout_marginBottom="8dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:enabled="false"
             />
 
-        <TextView
+        <EditText
             android:id="@+id/phone_modal_history"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -91,6 +96,7 @@
             android:layout_marginBottom="8dp"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:enabled="false"
             />
 
     </LinearLayout>

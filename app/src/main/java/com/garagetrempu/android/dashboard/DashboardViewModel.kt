@@ -29,7 +29,6 @@ class DashboardViewModel : ViewModel(){
             ))
     }
 
-    // CODE AJOUTÉ
     fun finishAppointment(appointmentId: Int, onSuccess: () -> Unit, onFailure: (Throwable) -> Unit) {
         val token = AppManager.token ?: throw IllegalStateException("Token is null")
         service.finishAppointment(token, appointmentId)

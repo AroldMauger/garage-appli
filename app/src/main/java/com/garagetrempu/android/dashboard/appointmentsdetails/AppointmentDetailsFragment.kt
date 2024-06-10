@@ -25,8 +25,6 @@ import kotlinx.android.synthetic.main.fragment_appointment_details.phone_modal
 import kotlinx.android.synthetic.main.fragment_appointment_details.reason_modal
 import kotlinx.android.synthetic.main.fragment_appointment_details.time_modal
 import org.koin.android.viewmodel.ext.android.sharedViewModel
-import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 

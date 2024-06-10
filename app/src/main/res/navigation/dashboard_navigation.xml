@@ -82,7 +82,12 @@
     <fragment
         android:id="@+id/history_appointment_details"
         android:name="com.garagetrempu.android.history.appointmentdetails.HistoryAppointmentDetailsFragment">
-
+        <action
+            android:id="@+id/action_closeModalHistory_to_history"
+            app:destination="@id/history" />
+        <action
+            android:id="@+id/action_to_history"
+            app:destination="@id/history" />
     </fragment>
 
 </navigation>

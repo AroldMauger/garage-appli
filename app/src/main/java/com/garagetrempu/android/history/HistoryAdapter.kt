@@ -24,7 +24,7 @@ class HistoryAdapter(
             val formattedDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
             itemView.findViewById<TextView>(R.id.appointmentDate).text = formattedDate
             itemView.findViewById<TextView>(R.id.appointmentCar).text = appointment.car
-            itemView.findViewById<View>(R.id.seeMore).setOnClickListener {
+            itemView.findViewById<View>(R.id.seeMoreHistory).setOnClickListener {
                 listener.onItemSelected(appointment)
             }
         }

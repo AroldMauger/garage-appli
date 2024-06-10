@@ -31,7 +31,7 @@
         android:fontFamily="@font/noto_sans_font_family" />
 
     <TextView
-        android:id="@+id/seeMore"
+        android:id="@+id/seeMoreHistory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="\uf06e"
