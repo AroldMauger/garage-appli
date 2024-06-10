@@ -1,5 +1,7 @@
 package com.garagetrempu.android.dashboard.navbar
 
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.garagetrempu.android.AppManager
 import com.garagetrempu.android.R
+import com.garagetrempu.android.login.MainActivity
 import kotlinx.android.synthetic.main.fragment_navbar_history.back_to_history
 
 class NavBarHistoryFragment: Fragment() {
@@ -37,6 +41,29 @@ class NavBarHistoryFragment: Fragment() {
             // Naviguer vers le fragment history
             findNavController().navigate(R.id.from_navbarhistory_to_list)
         }
+        val logoutButton = view.findViewById<Button>(R.id.logout)
+        logoutButton.setOnClickListener {
+            showLogoutConfirmationDialog()
+        }
 
+    }
+    private fun showLogoutConfirmationDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setMessage("Voulez-vous vraiment vous déconnecter?")
+            .setPositiveButton("Oui") { dialog, id ->
+                logout()
+            }
+            .setNegativeButton("Non") { dialog, id ->
+                dialog.dismiss()
+            }
+        builder.create().show()
+    }
+
+    private fun logout() {
+        // Logique de déconnexion, par exemple, nettoyer les informations de session
+        AppManager.token = null
+        val intent = Intent(activity, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
     }
 }
