@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setupListeners()
         if (BuildConfig.DEBUG) {
             user.setText("garagetrempu@gmail.com")
-            password.setText("test")
+            password.setText("")
         }
     }
 

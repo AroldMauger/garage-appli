@@ -74,7 +74,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Date du RDV  -  JJ/MM/AAAA"
-                    android:inputType="date"
                     android:fontFamily="@font/noto_sans_font_family"
                     android:padding="5dp"
                     android:layout_marginBottom="10dp"
